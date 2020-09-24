@@ -1,0 +1,41 @@
+ALGORITHM Checkpoint8_algo problem2 equal elements
+VAR
+    i,j,length1,length2 : INTEGER;
+   tab1,tab2 : ARRAY_OF INTEGER[50];
+   htab: HASH_TABLE<INTEGER,INTEGER>;
+   sum:=0 : INTEGER;
+BEGIN
+    write("Enter the length of tab1");
+    read(length1);
+    write("Enter the length of tab2");
+    read(length2);
+    write("Enter tab1 elements");
+    FOR i FROM 0 TO length1-1 STEP 1 DO
+        REPEAT
+            write ("Enter value");
+            read tab1[i];
+        UNTIL (tab1[i]= IsInteger())
+    END_FOR
+    FOR j FROM 0 TO length2-1 STEP 1 DO
+        REPEAT
+            write ("Enter value");
+            read tab1[j];
+        UNTIL (tab2[j]= IsInteger())
+    END_FOR
+    FOR i FROM 0 TO tab1.length1 -1 STEP 1  DO
+        FOR j FROM 0 TO tab2.length2 STEP 1  DO
+           IF (tab1[i]=tab2[j]) THEN
+               
+          IF (htab.lookup(tab1[i]) = TRUE) THEN
+             count := htab.get(tab1[i]);
+             htab.insert(tab1[i],count+1);
+         ELSE
+             htab.insert(tab1[i],1);
+         END_IF
+         END_IF 
+         END FOR
+   END_FOR
+   FOR i FROM 0 TO htab.length-1 STEP 1  DO
+       sum += htab[i]*htab.get(htab[i])
+   END_FOR
+END

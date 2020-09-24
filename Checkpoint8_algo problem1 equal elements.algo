@@ -1,0 +1,31 @@
+ALGORITHM Checkpoint8_algo problem1 equal elements
+VAR
+    i,j,length1,length2 : INTEGER;
+   tab1,tab2 : ARRAY_OF INTEGER[50];
+   sum:=0 : INTEGER
+BEGIN
+    write("Enter the length of tab1");
+    read(length1);
+    write("Enter the length of tab2");
+    read(length2);
+    write("Enter tab1 elements");
+    FOR i FROM 0 TO length1-1 STEP 1 DO
+        REPEAT
+            write ("Enter value");
+            read tab1[i]
+        UNTIL (tab1[i]= IsInteger())
+    END_FOR
+    FOR j FROM 0 TO length2-1 STEP 1 DO
+        REPEAT
+            write ("Enter value");
+            read tab1[j]
+        UNTIL (tab2[j]= IsInteger())
+    END_FOR
+    FOR i FROM 0 TO length1-1 STEP 1  DO
+        FOR j FROM 0 TO length2-1 STEP 1  DO
+            IF (tab1[i]=tab2[j]) THEN
+                sum+=tab1[i]
+            END_IF
+        END_FOR
+        
+    END_FOR
